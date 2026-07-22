@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://dxef0t7m4xlkn"]
+
+[ext_resource type="Script" uid="uid://bixomk4ygg55d" path="res://level_scene.gd" id="1_4quuv"]
+[ext_resource type="Texture2D" uid="uid://ds4htgljthbrf" path="res://images.jpeg" id="2_lwxgr"]
+[ext_resource type="Texture2D" uid="uid://dsyjswu76yp4q" path="res://images (1).jpeg" id="3_8wodn"]
+
+[node name="Node2D" type="Node2D" unique_id=765050571]
+script = ExtResource("1_4quuv")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=729890800]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_lwxgr")
+
+[node name="Hearts" type="HBoxContainer" parent="." unique_id=1342776045]
+offset_left = 234.0
+offset_right = 1147.0
+offset_bottom = 128.0
+
+[node name="Heart" type="TextureRect" parent="Hearts" unique_id=144315319]
+layout_mode = 2
+texture = ExtResource("3_8wodn")
+expand_mode = 2
+
+[node name="Heart2" type="TextureRect" parent="Hearts" unique_id=1444550672]
+layout_mode = 2
+texture = ExtResource("3_8wodn")
+expand_mode = 2
+
+[node name="Heart3" type="TextureRect" parent="Hearts" unique_id=767134523]
+layout_mode = 2
+texture = ExtResource("3_8wodn")
+expand_mode = 2
+
+[node name="Heart4" type="TextureRect" parent="Hearts" unique_id=789267977]
+layout_mode = 2
+texture = ExtResource("3_8wodn")
+expand_mode = 2
+
+[node name="Heart5" type="TextureRect" parent="Hearts" unique_id=245062526]
+layout_mode = 2
+texture = ExtResource("3_8wodn")
+expand_mode = 2
+
+[node name="Level" type="RichTextLabel" parent="." unique_id=60917795]
+offset_left = 507.0
+offset_top = 148.0
+offset_right = 689.0
+offset_bottom = 227.0
+theme_override_colors/default_color = Color(0.59607846, 0.4862745, 0, 1)
+theme_override_font_sizes/normal_font_size = 42
+text = "Level#"
+
+[node name="Timer" type="RichTextLabel" parent="." unique_id=66617779]
+offset_left = 531.0
+offset_top = 591.0
+offset_right = 608.0
+offset_bottom = 657.0
+theme_override_colors/default_color = Color(0.011764706, 0.84313726, 0.011764706, 1)
+theme_override_font_sizes/normal_font_size = 42
+text = "0.0"
