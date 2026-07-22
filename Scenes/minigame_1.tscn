@@ -1,0 +1,213 @@
+[gd_scene format=3 uid="uid://dafyxy84f7f4l"]
+
+[ext_resource type="Texture2D" uid="uid://ds4htgljthbrf" path="res://images.jpeg" id="1_enoba"]
+[ext_resource type="PackedScene" uid="uid://bfl5lemsoc3hf" path="res://Scenes/player.tscn" id="2_11mgy"]
+[ext_resource type="Texture2D" uid="uid://dwlp1al8s35lo" path="res://Tomate.png" id="3_f6tb2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_36jtr"]
+size = Vector2(1124.8138, 40)
+
+[sub_resource type="Animation" id="Animation_o6yob"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(227, 224)]
+}
+
+[sub_resource type="Animation" id="Animation_5txvl"]
+resource_name = "floting"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(227, 224), Vector2(227, 217.99998)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0uv5o"]
+_data = {
+&"RESET": SubResource("Animation_o6yob"),
+&"floting": SubResource("Animation_5txvl")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_11n3i"]
+radius = 10.490425
+
+[node name="Node2D" type="Node2D" unique_id=881955091]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1551730060]
+scroll_offset = Vector2(-11, 6)
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="background" type="TextureRect" parent="Parallax2D" unique_id=35819494]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_enoba")
+expand_mode = 1
+
+[node name="Platfom1" type="StaticBody2D" parent="." unique_id=1722529757]
+
+[node name="ColorRect" type="ColorRect" parent="Platfom1" unique_id=24652032]
+offset_top = 643.0
+offset_right = 1152.0
+offset_bottom = 683.0
+color = Color(1, 0.40784314, 0.36078432, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfom1" unique_id=1655793009]
+position = Vector2(573.25, 663)
+shape = SubResource("RectangleShape2D_36jtr")
+
+[node name="Platfom2" type="StaticBody2D" parent="." unique_id=253639936]
+position = Vector2(210.99998, -170)
+scale = Vector2(0.23966588, 1.0242845)
+
+[node name="ColorRect" type="ColorRect" parent="Platfom2" unique_id=562869643]
+offset_top = 643.0
+offset_right = 1152.0
+offset_bottom = 683.0
+color = Color(1, 0.40784314, 0.36078432, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfom2" unique_id=1315906012]
+position = Vector2(575.80164, 662.9018)
+scale = Vector2(1.0000004, 1.0000004)
+shape = SubResource("RectangleShape2D_36jtr")
+
+[node name="Platfom3" type="StaticBody2D" parent="." unique_id=1846348984]
+position = Vector2(210, -132)
+scale = Vector2(0.10596105, 0.71513826)
+
+[node name="ColorRect" type="ColorRect" parent="Platfom3" unique_id=647507359]
+offset_top = 643.0
+offset_right = 1152.0
+offset_bottom = 683.0
+color = Color(1, 0.40784314, 0.36078432, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfom3" unique_id=1453378414]
+position = Vector2(573.25, 663)
+shape = SubResource("RectangleShape2D_36jtr")
+
+[node name="Platfom4" type="StaticBody2D" parent="." unique_id=1994927745]
+position = Vector2(515, -106)
+scale = Vector2(0.1377979, 0.5175686)
+
+[node name="ColorRect" type="ColorRect" parent="Platfom4" unique_id=994991083]
+offset_top = 643.0
+offset_right = 1152.0
+offset_bottom = 683.0
+color = Color(1, 0.40784314, 0.36078432, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfom4" unique_id=184654473]
+position = Vector2(573.25, 663)
+shape = SubResource("RectangleShape2D_36jtr")
+
+[node name="Platfom5" type="StaticBody2D" parent="." unique_id=1090176133]
+position = Vector2(820, -128)
+scale = Vector2(0.12681524, 0.71712464)
+
+[node name="ColorRect" type="ColorRect" parent="Platfom5" unique_id=840792875]
+offset_top = 643.0
+offset_right = 1152.0
+offset_bottom = 683.0
+color = Color(1, 0.40784314, 0.36078432, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfom5" unique_id=119705550]
+position = Vector2(573.25, 663)
+shape = SubResource("RectangleShape2D_36jtr")
+
+[node name="Player" parent="." unique_id=947260510 instance=ExtResource("2_11mgy")]
+position = Vector2(63.999992, 593)
+rotation = 3.1415927
+scale = Vector2(-0.64644855, -0.6129096)
+
+[node name="Tomato" type="Node2D" parent="." unique_id=749271308]
+position = Vector2(227, 224)
+scale = Vector2(1.9944268, 1.5108786)
+
+[node name="Tomato" type="TextureRect" parent="Tomato" unique_id=2072449334]
+offset_left = 2.0055885
+offset_top = 22.503462
+offset_right = 42.00559
+offset_bottom = 62.503464
+scale = Vector2(0.9948186, 1.120651)
+texture = ExtResource("3_f6tb2")
+expand_mode = 2
+
+[node name="animation" type="AnimationPlayer" parent="Tomato" unique_id=607190054]
+root_node = NodePath("../Tomato")
+libraries/ = SubResource("AnimationLibrary_0uv5o")
+
+[node name="Area2D" type="Area2D" parent="Tomato" unique_id=1554938936]
+position = Vector2(-10.027945, 17.870398)
+scale = Vector2(2.4640799, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tomato/Area2D" unique_id=85085128]
+position = Vector2(13.022882, 28.460262)
+scale = Vector2(0.6013061, -1.9112523)
+shape = SubResource("CircleShape2D_11n3i")
+
+[node name="Tomato2" type="Node2D" parent="." unique_id=614545653]
+position = Vector2(227, 224)
+scale = Vector2(1.9944268, 1.5108786)
+
+[node name="Tomato" type="TextureRect" parent="Tomato2" unique_id=1677857137]
+offset_left = 2.0055885
+offset_top = 22.503462
+offset_right = 42.00559
+offset_bottom = 62.503464
+scale = Vector2(0.9948186, 1.120651)
+texture = ExtResource("3_f6tb2")
+expand_mode = 2
+
+[node name="animation" type="AnimationPlayer" parent="Tomato2" unique_id=1686788098]
+root_node = NodePath("../Tomato")
+libraries/ = SubResource("AnimationLibrary_0uv5o")
+
+[node name="Area2D" type="Area2D" parent="Tomato2" unique_id=1515336719]
+position = Vector2(-10.027945, 17.870398)
+scale = Vector2(2.4640799, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tomato2/Area2D" unique_id=1881478668]
+position = Vector2(13.022882, 28.460262)
+scale = Vector2(0.6013061, -1.9112523)
+shape = SubResource("CircleShape2D_11n3i")
+
+[node name="Tomato3" type="Node2D" parent="." unique_id=552406667]
+position = Vector2(227, 224)
+scale = Vector2(1.9944268, 1.5108786)
+
+[node name="Tomato" type="TextureRect" parent="Tomato3" unique_id=400524868]
+offset_left = 2.0055885
+offset_top = 22.503462
+offset_right = 42.00559
+offset_bottom = 62.503464
+scale = Vector2(0.9948186, 1.120651)
+texture = ExtResource("3_f6tb2")
+expand_mode = 2
+
+[node name="animation" type="AnimationPlayer" parent="Tomato3" unique_id=1861281266]
+root_node = NodePath("../Tomato")
+libraries/ = SubResource("AnimationLibrary_0uv5o")
+
+[node name="Area2D" type="Area2D" parent="Tomato3" unique_id=979480661]
+position = Vector2(-10.027945, 17.870398)
+scale = Vector2(2.4640799, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tomato3/Area2D" unique_id=528065750]
+position = Vector2(13.022882, 28.460262)
+scale = Vector2(0.6013061, -1.9112523)
+shape = SubResource("CircleShape2D_11n3i")

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bfl5lemsoc3hf"]
+
+[ext_resource type="Script" uid="uid://bua1omdrdaky0" path="res://player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://dit2k5ox5v4r6" path="res://MondmitBeinen.png" id="1_v0iea"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_36jtr"]
+radius = 72.99315
+
+[node name="Player" type="CharacterBody2D" unique_id=947260510]
+position = Vector2(49, 578)
+scale = Vector2(0.7130165, 0.5879198)
+script = ExtResource("1_cvnsp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1293794195]
+position = Vector2(6, -8)
+scale = Vector2(-0.25984293, 0.3213819)
+texture = ExtResource("1_v0iea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1320222083]
+position = Vector2(7, -7)
+shape = SubResource("CircleShape2D_36jtr")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=207463011]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=551627811]
+position = Vector2(7, -7)
+shape = SubResource("CircleShape2D_36jtr")
