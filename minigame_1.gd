@@ -16,10 +16,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if garlic_collected == 3:
-		if Global.minigames_done > 3:
-			get_tree().change_scene_to_file("res://scenes/done_screen.tscn")
-		else:
-			get_tree().change_scene_to_file("res://level_scene.tscn") 
+		get_tree().change_scene_to_file("res://level_scene.tscn") 
 
 	if timer_end: # if the timer does end...
 		Global.minigames_done -= 1 # go back a minigame
