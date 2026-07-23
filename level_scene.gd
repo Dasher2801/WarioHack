@@ -26,7 +26,7 @@ func _ready() -> void:
 		get_tree().change_scene_to_file("res://scenes/title_screen.tscn") # changes your scene
 	
 
-func _process(delta: float) -> void: # runs EVERY FRAME
+func _process(_delta: float) -> void: # runs EVERY FRAME
 	match Global.lives: # asks or checks if lives is equal to one of 
 #these values, cool hack. by the way this is a horrid way to illustrate the 
 #lives visually so later you can always find alternative code. Now, dw abt it.
