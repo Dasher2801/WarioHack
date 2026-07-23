@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cnejyj0qphbyt"]
+
+[ext_resource type="Script" uid="uid://b3yj3mcb377n7" path="res://lose_screen.gd" id="1_1n1m7"]
+[ext_resource type="Texture2D" uid="uid://b20nq23ncjf08" path="res://images (2).jpeg" id="2_73mov"]
+
+[node name="lose" type="Node2D" unique_id=2130252868]
+script = ExtResource("1_1n1m7")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=786587496]
+offset_left = -3.0
+offset_top = 6.0
+offset_right = 1148.0
+offset_bottom = 652.0
+texture = ExtResource("2_73mov")
+
+[node name="play again" type="Button" parent="." unique_id=1412853166]
+offset_left = 144.0
+offset_top = 409.0
+offset_right = 940.0
+offset_bottom = 636.0
+theme_override_font_sizes/font_size = 160
+text = "play again"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=565123034]
+offset_left = 189.0
+offset_top = 37.0
+offset_right = 1136.0
+offset_bottom = 334.0
+theme_override_colors/default_color = Color(0, 0.18431373, 0.7019608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/normal_font_size = 130
+text = "YOU LOST"
+
+[connection signal="pressed" from="play again" to="." method="_on_play_again_pressed"]

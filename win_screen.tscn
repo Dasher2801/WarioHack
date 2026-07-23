@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://br3umf2e2i66t"]
+
+[ext_resource type="Texture2D" uid="uid://c0sbhxvviibbj" path="res://was_ist_die_iss.jpg" id="1_wv5lq"]
+[ext_resource type="Script" uid="uid://bqyhk4n14pswd" path="res://win_screen.gd" id="1_xxsdf"]
+
+[node name="Node2D" type="Node2D" unique_id=1382842901]
+script = ExtResource("1_xxsdf")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=157700512]
+offset_right = 1152.0
+offset_bottom = 649.0
+texture = ExtResource("1_wv5lq")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=626856809]
+offset_left = 117.0
+offset_top = -9.0
+offset_right = 925.0
+offset_bottom = 262.0
+theme_override_colors/default_color = Color(0.6509804, 1, 0, 1)
+theme_override_font_sizes/normal_font_size = 170
+text = "YOU WIN"
+
+[node name="play again" type="Button" parent="." unique_id=856472455]
+offset_left = 144.0
+offset_top = 409.0
+offset_right = 940.0
+offset_bottom = 636.0
+theme_override_font_sizes/font_size = 160
+text = "play again"
+
+[connection signal="pressed" from="play again" to="." method="_on_play_again_pressed"]

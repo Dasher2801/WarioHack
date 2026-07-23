@@ -1,3 +1,68 @@
 [gd_scene format=3 uid="uid://xnfrkrqlv7l3"]
 
-[node name="Node2D" type="Node2D" unique_id=2118927419]
+[ext_resource type="Script" uid="uid://buu7f5ubfbxlv" path="res://minigame_2.gd" id="1_ksu6r"]
+[ext_resource type="Texture2D" uid="uid://ds4htgljthbrf" path="res://images.jpeg" id="1_uiylj"]
+[ext_resource type="Texture2D" uid="uid://dwlp1al8s35lo" path="res://Tomate.png" id="2_ksu6r"]
+[ext_resource type="Script" uid="uid://c2yjnn7l3lb18" path="res://button_1.gd" id="3_dqa6p"]
+
+[node name="minigame_2" type="Node2D" unique_id=2118927419]
+script = ExtResource("1_ksu6r")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1213147726]
+scroll_offset = Vector2(-11, 6)
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="background" type="TextureRect" parent="Parallax2D" unique_id=937026554]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_uiylj")
+expand_mode = 1
+
+[node name="Button1" type="TextureButton" parent="." unique_id=1537574294]
+offset_left = 150.0
+offset_top = 250.0
+offset_right = 190.0
+offset_bottom = 290.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("2_ksu6r")
+script = ExtResource("3_dqa6p")
+
+[node name="Button2" type="TextureButton" parent="." unique_id=1537574295]
+offset_left = 450.0
+offset_top = 200.0
+offset_right = 490.0
+offset_bottom = 240.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("2_ksu6r")
+script = ExtResource("3_dqa6p")
+
+[node name="Button3" type="TextureButton" parent="." unique_id=1537574296]
+offset_left = 750.0
+offset_top = 300.0
+offset_right = 790.0
+offset_bottom = 340.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("2_ksu6r")
+script = ExtResource("3_dqa6p")
+
+[node name="Countdown" type="RichTextLabel" parent="." unique_id=63164069]
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 178.53786
+offset_bottom = 42.0
+scale = Vector2(6.567613, 3.947142)
+theme_override_constants/outline_size = 18
+theme_override_font_sizes/normal_font_size = 21
+text = "  "
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=1017236837]
+offset_left = 367.0
+offset_top = 3.0
+offset_right = 539.0
+offset_bottom = 39.0
+text = "Click at the tomatos"
+
+[connection signal="pressed" from="Button1" to="Button1" method="_on_pressed"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]
+[connection signal="pressed" from="Button3" to="Button3" method="_on_pressed"]

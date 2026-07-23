@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bcghjre6f25ib"]
+
+[ext_resource type="Script" uid="uid://cq5x0eli4puju" path="res://minigame_3.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://ds4htgljthbrf" path="res://images.jpeg" id="2_bg"]
+[ext_resource type="Texture2D" uid="uid://dit2k5ox5v4r6" path="res://MondmitBeinen.png" id="3_moon"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_moon"]
+radius = 45.0
+
+[node name="minigame_3" type="Node2D" unique_id=-1176039877]
+script = ExtResource("1_script")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1213147726]
+scroll_offset = Vector2(-11, 6)
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="background" type="TextureRect" parent="Parallax2D" unique_id=937026554]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_bg")
+expand_mode = 1
+
+[node name="Moon" type="CharacterBody2D" parent="." unique_id=882352839]
+position = Vector2(200, 300)
+collision_layer = 2
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Moon" unique_id=1278140533]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_moon")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Moon" unique_id=481799914]
+shape = SubResource("CircleShape2D_moon")
+
+[node name="Area2D" type="Area2D" parent="Moon" unique_id=80823752]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Moon/Area2D" unique_id=1169357868]
+shape = SubResource("CircleShape2D_moon")
+
+[node name="Countdown" type="RichTextLabel" parent="." unique_id=63164069]
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 178.53786
+offset_bottom = 42.0
+scale = Vector2(6.567613, 3.947142)
+theme_override_constants/outline_size = 18
+theme_override_font_sizes/normal_font_size = 21
+text = "  "
+
+[node name="ObstacleContainer" type="Node2D" parent="." unique_id=1546181937]
+
+[connection signal="area_entered" from="Moon/Area2D" to="." method="_on_moon_collision"]
+[connection signal="body_entered" from="Moon/Area2D" to="." method="_on_moon_collision"]
