@@ -11,12 +11,12 @@ extends Node2D
 var time
 
 func _ready() -> void:
-	await Timer(5.0) # using the function created
+	await Timer(3.0) # using the function created
 	
 	if Global.minigames_done < 5: # if you havent completed 5 minigames yet 
 		Global.minigames_done = Global.minigames_done +1
 		# Randomly pick one of the 3 minigames (1, 2 or 3)
-		var scene_index: int = randi() % 3 + 1
+		var scene_index: int = randi() % 4 + 1
 		get_tree().change_scene_to_file("res://scenes/minigame_" + str(scene_index) + ".tscn")
 	else:
 		get_tree().change_scene_to_file("res://scenes/win_screen.tscn") # changes your scene

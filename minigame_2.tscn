@@ -59,8 +59,9 @@ text = "  "
 [node name="TextEdit" type="TextEdit" parent="." unique_id=1017236837]
 offset_left = 367.0
 offset_top = 3.0
-offset_right = 539.0
-offset_bottom = 39.0
+offset_right = 676.0
+offset_bottom = 56.0
+theme_override_font_sizes/font_size = 30
 text = "Click at the tomatos"
 
 [connection signal="pressed" from="Button1" to="Button1" method="_on_pressed"]

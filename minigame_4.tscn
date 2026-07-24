@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dfc72ye86rb7i"]
+
+[ext_resource type="Script" uid="uid://k0se0l1aby4o" path="res://minigame_4.gd" id="1_8rojo"]
+[ext_resource type="Texture2D" uid="uid://ds4htgljthbrf" path="res://images.jpeg" id="2_3n4v2"]
+[ext_resource type="Texture2D" uid="uid://dwlp1al8s35lo" path="res://Tomate.png" id="3_mxhla"]
+
+[node name="Node2D" type="Node2D" unique_id=223637860]
+script = ExtResource("1_8rojo")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1370589335]
+offset_right = 1152.0
+offset_bottom = 650.0
+texture = ExtResource("2_3n4v2")
+
+[node name="Button" type="Button" parent="." unique_id=1929479042]
+offset_left = 495.0
+offset_top = 237.0
+offset_right = 712.0
+offset_bottom = 434.0
+icon = ExtResource("3_mxhla")
+expand_icon = true
+
+[node name="Countdown" type="RichTextLabel" parent="." unique_id=2146600485]
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 178.53786
+offset_bottom = 42.0
+scale = Vector2(6.567613, 3.947142)
+theme_override_constants/outline_size = 18
+theme_override_font_sizes/normal_font_size = 21
+text = "  "
+
+[node name="10times" type="RichTextLabel" parent="." unique_id=1659690663]
+offset_left = 380.0
+offset_right = 819.0
+offset_bottom = 76.0
+theme_override_font_sizes/normal_font_size = 30
+text = "Click 10 times on the tomato"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
